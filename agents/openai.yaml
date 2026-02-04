@@ -1,0 +1,4 @@
+interface:
+  display_name: "Raycast Extension Docs"
+  short_description: "Guides and API reference for Raycast extensions"
+  default_prompt: "Use $raycast-extension-docs to build or publish a Raycast extension with the API docs."
