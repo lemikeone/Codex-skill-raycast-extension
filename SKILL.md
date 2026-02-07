@@ -11,6 +11,7 @@ Use the bundled Raycast documentation under `references/` as the source of truth
 
 ## Quick Routing
 
+- For common implementation tasks, use `references/COMMON_RECIPES.md` first.
 - Start with `references/SUMMARY.md` to locate the right doc page.
 - Use `references/README.md` for the general introduction and platform overview.
 - Use `references/basics/` for step-by-step guides (getting started, create, debug, publish).
@@ -24,15 +25,30 @@ Use the bundled Raycast documentation under `references/` as the source of truth
 - Use `references/migration/` and `references/changelog.md` for version changes and breaking updates.
 - Use `references/faq.md` for quick clarifications.
 
+## Fast Path
+
+For the most common request ("create a new extension"), go directly to:
+
+1. `references/COMMON_RECIPES.md` ("Create a New Extension")
+2. `references/basics/create-your-first-extension.md`
+3. `references/information/file-structure.md`
+4. `references/information/manifest.md`
+5. `references/information/best-practices.md`
+
+Only fall back to `references/SUMMARY.md` when the request is unclear or outside common recipes.
+
 ## Working Approach
 
-1. Identify the user's goal and map it to the most relevant section in `references/SUMMARY.md`.
+1. Identify the user's goal and route in this order: `references/COMMON_RECIPES.md` -> `references/SUMMARY.md` -> live docs at `https://developers.raycast.com` if needed.
 2. Open the specific doc file(s) and extract only the details needed to answer or implement.
-3. Cross-check API usage against `references/api-reference/` and best practices in `references/information/best-practices.md`.
-4. When building UI, verify component props and patterns in `references/api-reference/user-interface/`.
-5. When shipping or collaborating, confirm publish/team steps in `references/basics/` or `references/teams/`.
+3. Apply source priority for technical guidance: official Raycast docs and the Raycast extensions repo first. If local docs conflict with live docs, follow live official docs.
+4. Cross-check API usage against `references/api-reference/` and best practices in `references/information/best-practices.md`.
+5. Freshness check: if a page shows "Last updated", compare with today's date. If stale or if the question is about recent API/runtime changes, verify in live docs before finalizing.
+6. When building UI, verify component props and patterns in `references/api-reference/user-interface/`.
+7. When shipping or collaborating, confirm publish/team steps in `references/basics/` or `references/teams/`.
 
 ## Notes
 
 - Keep answers aligned with the docs; call out when guidance is inferred or when the docs are silent.
 - If the user asks about behavior changes, consult `references/migration/` and `references/changelog.md`.
+- Freshness: this repository is a local snapshot. If a question depends on very recent API/runtime changes, verify live docs at `https://developers.raycast.com` before finalizing.
