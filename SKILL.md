@@ -1,6 +1,6 @@
 ---
 name: raycast-extension-docs
-description: Guidance for building, debugging, and publishing Raycast extensions using the Raycast documentation set. Use when Codex needs to create or modify Raycast extensions (React/TypeScript/Node), consult Raycast API reference or UI components, build AI extensions, handle manifest/lifecycle/preferences, troubleshoot issues, or prepare/publish extensions to the Raycast Store or Teams.
+description: "Guidance for building, debugging, and publishing Raycast extensions using the Raycast documentation set. Use when Codex needs to create or modify Raycast extensions (React/TypeScript/Node), consult Raycast API reference or UI components, build AI extensions, handle manifest/lifecycle/preferences, troubleshoot issues, or prepare/publish extensions to the Raycast Store or Teams."
 ---
 
 # Raycast Extension Docs
@@ -31,6 +31,38 @@ Use the bundled Raycast documentation under `references/` as the source of truth
 3. Cross-check API usage against `references/api-reference/` and best practices in `references/information/best-practices.md`.
 4. When building UI, verify component props and patterns in `references/api-reference/user-interface/`.
 5. When shipping or collaborating, confirm publish/team steps in `references/basics/` or `references/teams/`.
+6. Validate the extension before publishing:
+   - Run `npm run dev` to test locally and confirm no build errors.
+   - Check `package.json` manifest fields against `references/information/manifest.md`.
+   - Verify store requirements in `references/basics/prepare-an-extension-for-store.md`.
+7. If build or runtime errors occur, consult `references/faq.md` and `references/information/developer-tools.md` for common fixes.
+
+## Common Tasks
+
+### Scaffold a new extension
+
+```bash
+npx create-raycast-extension@latest --name my-extension --template detail
+cd my-extension && npm install && npm run dev
+```
+
+See `references/basics/create-your-first-extension.md` for the full walkthrough.
+
+### Minimal List command
+
+```tsx
+import { List } from "@raycast/api";
+
+export default function Command() {
+  return (
+    <List>
+      <List.Item title="Hello" subtitle="World" />
+    </List>
+  );
+}
+```
+
+See `references/api-reference/user-interface/list.md` for all List props and patterns.
 
 ## Notes
 
